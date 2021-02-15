@@ -30,8 +30,6 @@ for i in range(1,101):
 print("\n")
 number = 100
 guess = int(input("Enter the value:"))
-
-
 if guess>100:
   print("You entered greater value")
 else:
