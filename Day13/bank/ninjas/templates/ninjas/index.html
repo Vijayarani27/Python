@@ -1,0 +1,9 @@
+{% if dev_list %}
+    <ul>
+    {% for dev in dev_list %}
+        <li><a href="{% url 'ninjas:detail' dev.id %}">{{ dev.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
