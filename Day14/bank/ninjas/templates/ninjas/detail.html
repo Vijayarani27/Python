@@ -1,0 +1,12 @@
+<h1>{{ dev.name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'ninjas:vote' dev.id %}" method="post">
+{% csrf_token %}
+{% for skill in dev.skill_set.all %}
+    <input type="radio" name="skill" id="skill{{ forloop.counter }}" value="{{ skill.id }}">
+    <label for="skill{{ forloop.counter }}">{{ skill.name }}</label><br>
+{% endfor %}
+<input type="submit" value="Level">
+</form>

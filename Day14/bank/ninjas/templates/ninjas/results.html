@@ -1,0 +1,9 @@
+<h1>{{ dev.name }}</h1>
+
+<ul>
+{% for skill in dev.skill_set.all %}
+    <li>{{ skill.name }} -- {{ skill.level }} Level{{ skill.level|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'ninjas:detail' dev.id %}">Try again?</a>
